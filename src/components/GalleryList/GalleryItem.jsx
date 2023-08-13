@@ -2,21 +2,28 @@ import { useState } from "react"
 
 
 
-function GalleryItem({imageProp}) {
+function GalleryItem({ imageProp }) {
 
     const [descriptionStatus, setDescriptionStatus] = useState(false);
 
-    function showDescription(){
+    function showDescription() {
         console.log("CLICKED ON IMAGE", descriptionStatus)
         setDescriptionStatus(!descriptionStatus)
     }
 
-    if(descriptionStatus == true){
+    if (descriptionStatus == true) {
         return <p onClick={() => showDescription()}>{imageProp.description}</p>
+
     }
 
     return (
-        <img onClick={() => showDescription()} src={`${imageProp.path}`} alt={`${imageProp.description}`}  />
-)}
+        <>
+            <div className='image-item'>
+            <img onClick={() => showDescription()} src={`${imageProp.path}`} alt={`${imageProp.description}`} />
+            <button>LIKE 👍</button>
+            </div>
+        </>
+    )
+}
 
 export default GalleryItem

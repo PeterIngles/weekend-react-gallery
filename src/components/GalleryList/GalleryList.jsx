@@ -1,12 +1,16 @@
 import React from 'react';
 import GalleryItem from '../GalleryList/GalleryItem'
+import "./GalleryList.css"
 
-function GalleryList({imageGallery}) {
+function GalleryList({ imageGallery }) {
     return (<>
-        {imageGallery.map(image => (<GalleryItem key={image.id} imageProp={image}/>)
-        )}
+        <div className="image-grid">
+            {imageGallery.map(image => (<GalleryItem key={image.id} imageProp={image} />)
+            )}
+    </div>
+
    </> );
-    
+
 }
 
 export default GalleryList
