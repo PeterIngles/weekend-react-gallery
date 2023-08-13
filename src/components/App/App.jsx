@@ -17,7 +17,7 @@ function App() {
     axios
       .get('/gallery')
       .then((response) => {
-        // array of inventory objects saved to state array
+        // array of gallery objects saved to state array
         setImageGallery(response.data);
       })
       .catch((error) => {
@@ -25,6 +25,8 @@ function App() {
         console.log('Error getting imageGallery', error);
       });
   };
+
+  
 
 
   return (

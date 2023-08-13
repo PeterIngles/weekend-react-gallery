@@ -13,6 +13,7 @@ router.put('/like/:id', (req, res) => {
             galleryItem.likes += 1;
         }
     }
+    
     res.sendStatus(200);
 }); // END PUT Route
 
