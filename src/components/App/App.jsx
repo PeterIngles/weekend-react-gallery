@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 
 import './App.css';
+import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
 
@@ -26,19 +27,16 @@ function App() {
   };
 
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <p>Gallery goes here</p>
-        <>
-  {imageGallery.map(image => 
-    <img key = {image.id} src={`${image.path}`} alt="gallery"/>
-  )}
-</>
-      </div>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Gallery of My Life</h1>
+      </header>
+      <p>Gallery goes here</p>
+      <GalleryList imageGallery={imageGallery}/>
+    </div>
+  );
 }
 
 export default App;
+
